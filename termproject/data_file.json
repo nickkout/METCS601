@@ -1,0 +1,69 @@
+{
+ "appetizers":[
+  {
+   "id":1,
+   "name":"quiche lorraine",
+   "category":"appetizers"
+  },
+  {
+   "id":2,
+   "name":"caesar salad",
+   "category":"appetizers"
+  },
+  {
+   "id":3,
+   "name":"goat cheese tartin",
+   "category":"appetizers"
+  },
+  {
+   "id":4,
+   "name":"brie en croute",
+   "category":"appetizers"
+  }
+ ]
+ ,
+ "entrees":[
+  {
+   "id":1,
+   "name":"baked salmon",
+   "category":"entrees"
+  },
+  {
+   "id":2,
+   "name":"steak frites",
+   "category":"entrees"
+  },
+  {
+   "id":3,
+   "name":"roast chicken",
+   "category":"entrees"
+  },
+  {
+   "id":4,
+   "name":"croque monsieur",
+   "category":"entrees"
+  }
+ ],
+ "dessert":[
+  {
+   "id":1,
+   "name":"chocolate lava cake",
+   "category":"dessert"
+  },
+  {
+   "id":2,
+   "name":"eclair",
+   "category":"dessert"
+  },
+  {
+   "id":3,
+   "name":"crème brûlée",
+   "category":"dessert"
+  },
+  {
+   "id":4,
+   "name":"pistachio profiterole",
+   "category":"dessert"
+  }
+ ]
+}     
