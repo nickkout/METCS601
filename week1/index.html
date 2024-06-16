@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+ <head>
+  <meta charset="UTF-8">
+  <title>Homework Week 1</title> 
+  <link rel="stylesheet" href="./style.css">
+  <script  src="./script.js"></script>
+ </head>
+ 
+ <body>
+  <form id="mainform" name="mainform" onsubmit="validateSubmission()">
+   <div class="form_style"> 
+    <label>First Name</label> 
+    <input type="text" id="firstname" name="firstname">
+    <span id="fn_error" class="error"></span>
+    
+    <label>Last Name</label> 
+    <input type="text" id="lastname" name="lastname">
+    <span id="ln_error" class="error"></span>
+    
+    <label>Email</label> 
+    <input type="email" id="email" name="email" required >
+    
+    <label>Package</label> 
+    <select id="select-package" name="select-package" form="mainform">
+     <option disabled selected value>-- select package --</option>
+     <option value="Bronze">Bronze</option>
+     <option value="gold">Gold</option>
+     <option value="silver">Silver</option>
+     <option value="platinum">Platinum</option> 
+    </select>
+    <span id="package_error" class="error"></span>
+    
+    <label>Subscribe</label> 
+    <input type="checkbox" id="subscribe" name="subscribe">
+    <span id="subscribe_error" class="error"></span>
+    
+    <input type="submit"> 
+   </div>
+  </form>  
+   
+  <div id="user_output_summary"></div>  
+ </body> 
+</html>
