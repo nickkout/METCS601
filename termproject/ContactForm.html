@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="theme-color" content="#000000">
+    <meta name="description"" content="Page 3">
+
+    <title>Web Contact Form</title>
+</head>
+
+<script type="text/javascript" src="Code.js"></script>
+<script type="text/javascript" src="ContactForm.js"></script>
+<link rel="stylesheet" href="Styles.css">
+
+<body onload="CreateMenu()">
+
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+
+    <div id="outer-main-grid">
+
+        <div id="nav-div">
+            <div id="menu"></div>
+        </div>
+
+        <div id="main-div">
+         <div id="contact-form-div">
+
+          <form id="contactform" name="contactform" onsubmit="return false">
+           <div id="contact-form-inner-div">
+            <!-- first name -->
+            <label>First Name:</label>
+            <input type="text" id="firstname" name="firstname" />
+            <span id="fnerror"></span>
+
+            <!-- last name -->
+            <label>Last Name:</label>
+            <input type="text" id="lastname" name="lastname" />
+            <span id="lnerror"></span>
+
+            <!-- email -->
+            <label>Email:</label>
+            <input type="email" id="email" required />
+            
+            <!-- concern reason -->
+            <label>Reason for your concern:</label>
+            <select id="concernreason" name="concernreason">
+             <option disabled selected>--Select--</option>
+             <option value="gen-inq">General Inquiry</option>
+             <option value="track-order">Track Order</option>
+             <option value="warranty">Warranty</option>
+             <option value="opt-out">Opt out of emails</option>
+             <option value="other">Other</option>
+            </select>
+            <span id="crerror"></span>
+
+            <!-- concern explanation -->
+            <label>Please tell us about your concern:</label>
+            <textarea rows="10" id="concerntext" name="concerntext"></textarea>
+            <span id="cterror"></span>
+
+            <!-- button -->
+            <input type="submit" id="bttn-submit" onclick="validateForm()" /> 
+
+            <!-- success msg -->
+            <span id="successmsg" style="color:green;text-transform:none;"></span>
+
+           </div>
+          </form>
+
+         </div>
+        </div>
+    </div>
+
+
+
+</body>
+</html>
