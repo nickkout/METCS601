@@ -2,6 +2,7 @@
 
 //creates nav menu
 function CreateMenu() {
+	/*
 	alert("fu");
     const mnu = document.getElementById("menu");
     const ul = document.createElement("div"); //ul
@@ -54,7 +55,7 @@ function CreateMenu() {
         }
 
     }
-
+*/
 };
 
 
