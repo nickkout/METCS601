@@ -119,7 +119,7 @@ function drop(ev) {
   msg.innerText="";
  }
  else
-  msg.innerText = `Only 1 item from the ${type} is allowed.`;
+  msg.innerText = `Only 1 item from ${type} is allowed.`;
 }
 
 
