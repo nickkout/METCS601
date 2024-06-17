@@ -45,3 +45,15 @@ function CreateMenu() {
     }
 }
 ;
+function CreateFooter() {
+    var footer = document.getElementById("footer-div");
+    var links = ["Home", "AboutUs", "Contact"];
+    links.forEach(function (e) {
+        var d = document.createElement("div");
+        footer.appendChild(d);
+        var link = document.createElement("a");
+        d.appendChild(link);
+        link.text = e;
+        link.href = "";
+    });
+}
