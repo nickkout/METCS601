@@ -66,7 +66,18 @@ function getJSON(category) {
 }
 
 function drag(ev) {
+
+ //add id and type
  ev.dataTransfer.setData("text",ev.target.id);
+
+ const strId = ev.target.id;
+
+ if(strId.indexOf("appetizers")>-1) {strType="appetizers";}
+ else if(strId.indexOf("entrees")>-1) {strType="entrees";}
+ else {strType="dessert";}
+
+ ev.dataTransfer.setData("type",strType);
+	
 }
 
 function allowDrop(ev) {
@@ -75,9 +86,40 @@ function allowDrop(ev) {
 
 function drop(ev) {
  ev.preventDefault();
- let data = ev.dataTransfer.getData("text");
-	ev.target.appendChild(document.getElementById(data));
-	alert(data);
+
+ let item = ev.dataTransfer.getData("text"); 
+ let type = ev.dataTransfer.getData("type");
+
+ let ar = document.getElementById("dinner").childNodes;
+ let strId = "";
+ let boolAdd = true;
+
+ ar.forEach(e =>
+ {
+  strId = e.id;
+
+  if(e.innerText != undefined)
+  {
+   let a = strId.indexOf("appetizers")==0 && type=="appetizers";
+   let b = strId.indexOf("entrees")==0 && type=="entrees";
+   let c = strId.indexOf("dessert")==0 && type=="dessert";
+
+   if(a || b || c)
+	boolAdd=false;
+  }
+ }
+ ); 
+
+ //allow only 1 item per category
+ let msg = document.getElementById("dd-msg");
+
+ if(boolAdd)
+ {
+  ev.target.appendChild(document.getElementById(item));
+  msg.innerText="";
+ }
+ else
+  msg.innerText = `Only 1 item from the ${type} is allowed.`;
 }
 
 

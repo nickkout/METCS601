@@ -64,7 +64,6 @@
 }
 
 
-
 /* Page 3 - Web Contact Form */
 
 #contact-form-div {
@@ -260,7 +259,7 @@
 
 #dd-div {
  display: grid;
- grid-template-rows: 5;
+ grid-template-rows: 4;
  grid-template-columns: repeat(3,40fr);
  justify-content: center;
  align-content: center;
@@ -293,8 +292,7 @@
 #entrees-div {grid-row: 2;grid-column: 2;}
 #dessert-div {grid-row: 2;grid-column: 3;}
 #dinner-div {grid-row: 3;grid-column: 1/span 3;}
-
-
+#dd-msg{color:red;text-decoration:underline;}
 
 
 
