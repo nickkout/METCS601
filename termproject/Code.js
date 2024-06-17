@@ -13,7 +13,7 @@ function CreateMenu() {
     mnu.appendChild(ul);
     ul.className = "menu-bar";
 
-    for (let i = 0; i < pages; i++) {
+    for (let i = 1; i <= pages; i++) {
         let li = document.createElement("div"); //li
         let a = document.createElement("a");
 
@@ -21,23 +21,23 @@ function CreateMenu() {
         li.appendChild(a);
 
         switch (i) {
-            case 0:
+            case 1:
                 txt = "Home";
                 hr = "index.html";
                 break;
-            case 1:
+            case 2:
                 txt = "Gallery";
                 break;
-            case 2:
+            case 3:
                 txt = "ContactForm";
                 break;
-            case 3:
+            case 4:
                 txt = "SVG";
                 break;
-            case 4:
+            case 5:
                 txt = "Geolocation";
                 break;
-			case 5:
+			case 6:
 				txt="DragNDrop";
 				break;
 			default:
@@ -53,7 +53,6 @@ function CreateMenu() {
          a.href = txt + ".html";
         }
 
-        
     }
 
 };
