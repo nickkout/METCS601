@@ -43,6 +43,10 @@ A web browser, preferably Firefox (v. 125.0.3, 64 bit).
  5) Geolocation.html = displays functionality of HTML5 Geolocation APIs and what one possible use - Google Maps 
  6) DragNDrop.html = displays HTML5 Drag n Drop functionality
 
+# Styling
+ 
+ All css is stored in the 'Styles.css' file. Each webpage has a boiler plate shchema that leverages flexbox and grid where 
+ applicable. For example, this is shown in the header and the footer.
 
 
 

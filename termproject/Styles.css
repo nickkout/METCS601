@@ -294,7 +294,7 @@
  left: 5%;
  width: 90%;
  display: grid;
- grid-template-rows: repeat(2,auto);
+ grid-template-rows: repeat(3,auto);
  justify-content: center;
  align-content: center;
  align-items: flex-start;
@@ -350,3 +350,36 @@
  border: 0px solid red;
  padding: 20px 0px;
 }
+
+#footer-div {
+ grid-row: 3;
+ display:flex;
+ flex-flow:row wrap;
+ justify-content:center;
+ align-content:center;
+ align-items:center;
+ background: white;
+ width:100%;
+ border:2px solid orange;
+ border-radius:10px;
+ padding: 5px 5px;
+ gap:3px;
+}
+
+#footer-div div
+{
+ flex:1 1 auto; 
+ display:flex;
+ flex-flow:row wrap;
+ justify-content:center;
+ align-content:center;
+ align-items:center;
+
+}
+
+#footer-div a {padding: 5px;text-align:center;}
+#footer-div a:link { color:blue;}
+#footer-div a:active { color:yellow;}
+#footer-div a:hover { color:green;}
+
+
