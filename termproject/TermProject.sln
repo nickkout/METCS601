@@ -29,8 +29,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "pics", "pics", "{7CE38F3D-A
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Code", "Code", "{A131C15A-9CCA-4162-B1E4-1CCA17817F76}"
 	ProjectSection(SolutionItems) = preProject
-		Code.js = Code.js
 		ContactForm.js = ContactForm.js
+		Code.js = Code.js
+		CodeTS.js = CodeTS.js
 		DragNDrop.js = DragNDrop.js
 		Gallery.js = Gallery.js
 		Geoloc.js = Geoloc.js

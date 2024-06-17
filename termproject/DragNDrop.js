@@ -1,183 +1,88 @@
-
-
 //adds items to respective unordered lists
 function PopulateItems() {
- URLs=["appetizers","entrees","dessert"];
-
- console.clear();
-
- URLs.map((e) => getJSON(e));
-
- //add events & methods: drop container
- /*
-	const divDrop=document.getElementById(divDropId);
-
-	divDrop.addEventListener("dragover",dragover);
-	divDrop.addEventListener("drop",drop);
-	divDrop.addEventListener("dragleave",dragleave);
- */
+    var URLs = ["appetizers", "entrees", "dessert"];
+    console.clear();
+    URLs.forEach(function (e) { return getJSON(e); });
 }
-
 //gets JSON data that contains the 2 sets of data
 function getJSON(category) {
-
-  const url=`http://localhost:3000/${category}`
-
-  //set variables
-  let ulItems=document.getElementById(category);
-
-  //clear previous items 
-  listItems=document.querySelectorAll("#"+category+" > li");
-  listItems.forEach(e => document.getElementById(ulId).removeChild(e));
-
-  //fetch JSON 
-  fetch(url)
-   .then((response) => response.json())
-   .then((data) => {
-
-	//change JSON to string and split each row into an array
-	const n=JSON.stringify(data);
-	const o=n.substring(1,n.length);
-	const p=o.substring(0,o.length-1);
-	const ar=p.split('},');
-
-	//create <li> items    
-	for(i=0;i<ar.length;i++) {
-	 let row = ar[i];
-
-	 if(row.substring(row.length-1)=="\"") {row=row+"}"};
-
-	  const o = JSON.parse(row);
-
-	  let li = document.createElement("li");
-		
-	  ulItems.appendChild(li);
-
-	  li.innerText=o["name"];
-	  li.setAttribute("draggable","true");
-      li.setAttribute("id",(category+(i+1)));
-	  li.addEventListener("dragstart",drag);
-
-	  //li.addEventListener("dragstart",dragstart);
-	  //li.addEventListener("dragend",dragend);
-	 }
+    var url = "http://localhost:3000/".concat(category);
+    //set variables
+    var ulItems = document.getElementById(category);
+    //clear previous items 
+    var listItems = document.querySelectorAll("#" + category + " > li");
+    listItems.forEach(function (e) { return document.getElementById(category).removeChild(e); });
+    //fetch JSON 
+    fetch(url)
+        .then(function (response) { return response.json(); })
+        .then(function (data) {
+        //change JSON to string and split each row into an array
+        var n = JSON.stringify(data);
+        var o = n.substring(1, n.length);
+        var p = o.substring(0, o.length - 1);
+        var ar = p.split('},');
+        //create <li> items    
+        for (var i = 0; i < ar.length; i++) {
+            var row = ar[i];
+            if (row.substring(row.length - 1) == "\"") {
+                row = row + "}";
+            }
+            ;
+            var o_1 = JSON.parse(row);
+            var li = document.createElement("li");
+            ulItems.appendChild(li);
+            li.innerText = o_1["name"];
+            li.setAttribute("draggable", "true");
+            li.setAttribute("id", (category + (i + 1)));
+            li.addEventListener("dragstart", drag);
+        }
     })
-   .catch(console.error);
+        .catch(console.error);
 }
-
+//drag 
 function drag(ev) {
-
- //add id and type
- ev.dataTransfer.setData("text",ev.target.id);
-
- const strId = ev.target.id;
-
- if(strId.indexOf("appetizers")>-1) {strType="appetizers";}
- else if(strId.indexOf("entrees")>-1) {strType="entrees";}
- else {strType="dessert";}
-
- ev.dataTransfer.setData("type",strType);
-	
+    //add id and type
+    ev.dataTransfer.setData("text", ev.target.id);
+    var strId = ev.target.id;
+    var strType = "";
+    if (strId.indexOf("appetizers") > -1) {
+        strType = "appetizers";
+    }
+    else if (strId.indexOf("entrees") > -1) {
+        strType = "entrees";
+    }
+    else {
+        strType = "dessert";
+    }
+    ev.dataTransfer.setData("type", strType);
 }
-
+//allow drop
 function allowDrop(ev) {
- ev.preventDefault();
+    ev.preventDefault();
 }
-
+//drop
 function drop(ev) {
- ev.preventDefault();
-
- let item = ev.dataTransfer.getData("text"); 
- let type = ev.dataTransfer.getData("type");
-
- let ar = document.getElementById("dinner").childNodes;
- let strId = "";
- let boolAdd = true;
-
- ar.forEach(e =>
- {
-  strId = e.id;
-
-  if(e.innerText != undefined)
-  {
-   let a = strId.indexOf("appetizers")==0 && type=="appetizers";
-   let b = strId.indexOf("entrees")==0 && type=="entrees";
-   let c = strId.indexOf("dessert")==0 && type=="dessert";
-
-   if(a || b || c)
-	boolAdd=false;
-  }
- }
- ); 
-
- //allow only 1 item per category
- let msg = document.getElementById("dd-msg");
-
- if(boolAdd)
- {
-  ev.target.appendChild(document.getElementById(item));
-  msg.innerText="";
- }
- else
-  msg.innerText = `Only 1 item from ${type} is allowed.`;
+    ev.preventDefault();
+    var item = ev.dataTransfer.getData("text");
+    var type = ev.dataTransfer.getData("type");
+    var ar = document.getElementById("dinner").childNodes;
+    var boolAdd = true;
+    ar.forEach(function (e) {
+        var strId = e.id;
+        if (e.innerText != undefined) {
+            var a = strId.indexOf("appetizers") == 0 && type == "appetizers";
+            var b = strId.indexOf("entrees") == 0 && type == "entrees";
+            var c = strId.indexOf("dessert") == 0 && type == "dessert";
+            if (a || b || c)
+                boolAdd = false;
+        }
+    });
+    //allow only 1 item per category
+    var msg = document.getElementById("dd-msg");
+    if (boolAdd) {
+        ev.target.appendChild(document.getElementById(item));
+        msg.innerText = "";
+    }
+    else
+        msg.innerText = "Only 1 item from ".concat(type, " is allowed.");
 }
-
-
-/*
-//
-function dragstart(e) {
- const strId = e.target.id;
-
- if (strId.indexOf("appetizers")>-1)
- {strType="appetizers";}
- else if (strId.indexOf("entrees")>-1)
- {strType="entrees";}
- else
- {strType="dessert";}
-
- //add id and type
- e.dataTransfer.setData('text/plain',e.target.id);
- e.dataTransfer.setData('type',strType);
- e.target.classList.add('dragging');
-}
-
-//drag end event method
-function dragend(e) {
- e.target.classList.remove('dragging');
-}
-
-//dragover event method
-function dragover(e) {
- e.preventDefault()
- e.currentTarget.classList.add('drag-over'); alert("do");
-}
-
-//drop event method
-function drop(e) {
-
-	 e.preventDefault(); //prevent default behavior
-
-	 //set variables 
-	 const itemType=e.dataTransfer.getData('type');
-	 const divDropId=e.target.id;
-	 const divDropZone=document.getElementById(divDropId);
-
-	 //determine if item can be dropped to desired target 
-	 let boolAcceptDrop = true;
-
-	
-	 if(boolAcceptDrop) {
-	  //add item to drop zone 
-	  const itemId=e.dataTransfer.getData('text/plain');
-	  const item=document.getElementById(itemId);
-
-	  divDropZone.appendChild(item);
-	} 
-}
-
-//dragleave event method
-function dragleave(e) {
- e.currentTarget.classList.remove('drag-over');
-}
-
-*/

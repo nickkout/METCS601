@@ -1,46 +1,38 @@
-
-
 //creates photo gallery
 function displayImages() {
-
- let arImgNmBOS = [];
- let arImgNmNYC = [];
- let arImages = [];
- let str = ""
-
- //loop
- for (i = 1; i < 6; i++) {
-  str = `bos-${i}.jpg`;   
-  arImgNmBOS.push(str);
-
-  str = `nyc-${i}.jpg`;
-  arImgNmNYC.push(str);
- }
-
- //combine images into one array
- arImgNmBOS.forEach(e => {
-  arImages.push(e);
- });
- arImgNmNYC.forEach(e => {
-  arImages.push(e);
- }); 
-
- const div=document.getElementById("img-small-div");
-
- //add img 
- arImages.forEach(e => {
-  let img = document.createElement("img");
-
-  img.src = e;
-  img.onclick=(e => {
-   //add img to zoom div
-   document.getElementById("img-zoom").src=e.target.src;
-   document.getElementById("img-zoom-div").style.display="block";
- });
-
-  div.appendChild(img);  
-
- });
-
+    var arImgNmBOS = [];
+    var arImgNmNYC = [];
+    var arImages = [];
+    var str = "";
+    //loop
+    for (var i = 1; i < 6; i++) {
+        str = "bos-".concat(i, ".jpg");
+        arImgNmBOS.push(str);
+        str = "nyc-".concat(i, ".jpg");
+        arImgNmNYC.push(str);
+    }
+    //combine images into one array
+    arImgNmBOS.forEach(function (e) {
+        arImages.push(e);
+    });
+    arImgNmNYC.forEach(function (e) {
+        arImages.push(e);
+    });
+    var div = document.getElementById("img-small-div");
+    //add img 
+    arImages.forEach(function (e) {
+        var img = document.createElement("img");
+        img.src = e;
+        img.onclick = (function (e) {
+            //add img to zoom div  
+            var imgZoom = document.getElementById("img-zoom");
+            var imgZoomDiv = document.getElementById("img-zoom-div");
+            var target = e.target;
+            var url = target.src;
+            imgZoom.src = url;
+            imgZoom.alt = "an img";
+            imgZoomDiv.style.display = "block";
+        });
+        div.appendChild(img);
+    });
 }
-

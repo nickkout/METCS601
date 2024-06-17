@@ -133,6 +133,7 @@
 #svg-circle-div {
  grid-row:2;
  display:flex;
+ flex-flow:column wrap;
  justify-content: center;
  align-content: center;
  align-items: center;
