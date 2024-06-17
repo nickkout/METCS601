@@ -17,17 +17,26 @@
  <script type="text/javascript" src="Code.js"></script>
  <link rel="stylesheet" href="Styles.css">
 
- <body onload="CreateMenu()">
+ <body>
 
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+ <script>
 
-    <div id="outer-main-grid">
-        <div id="nav-div">
-            <div id="menu"></div>
-        </div>
-        <div id="main-div">
-         Welcome to MET CS 601 Term Project. This website featuress several pages. These can be accessed by the navigation menu.
-        </div>
-    </div>
+  //populate w item data
+  window.onload=(event) => {
+   CreateMenu();
+  };
+
+ </script>
+
+     <noscript>You need to enable JavaScript to run this app.</noscript>
+
+     <div id="outer-main-grid">
+         <div id="nav-div">
+             <div id="menu"></div>
+         </div>
+         <div id="main-div">
+             Welcome to MET CS 601 Term Project. This website featuress several pages. These can be accessed by the navigation menu.
+         </div>
+     </div>
  </body>
 </html>

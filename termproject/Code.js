@@ -46,7 +46,7 @@ function CreateMenu() {
 
         a.text = txt;
 
-        if (i == 0) {
+        if (i == 1) {
          a.href = hr;
         }
         else {

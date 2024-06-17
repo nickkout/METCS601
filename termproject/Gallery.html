@@ -21,27 +21,36 @@
 
 <link rel="stylesheet" href="Styles.css">
 
-<body onload="CreateMenu()">
+<body>
 
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+ <script>
+
+ //populate w item data
+ window.onload=(event) => {
+  CreateMenu();
+ };
+
+ </script>
+
+ <noscript>You need to enable JavaScript to run this app.</noscript>
 
     <div id="outer-main-grid">
 
-     <div id="nav-div">
-      <div id="menu"></div>
-     </div>
+        <div id="nav-div">
+            <div id="menu"></div>
+        </div>
 
-     <div id="main-div">
-      <div id="gallery-div">
-       <!-- button -->
-       <div id="bttn-div"><input type="button" value="Load Gallery" onclick="displayImages()" /></div>
-       <!-- images -->
-       <div id="img-small-div" class="img-div"></div>
-       <!-- zoom image -->
-       <div id="img-zoom-div" class="img-div"><p>Zoom Image</p><img id="img-zoom"></div>
-      </div>
+        <div id="main-div">
+            <div id="gallery-div">
+                <!-- button -->
+                <div id="bttn-div"><input type="button" value="Load Gallery" onclick="displayImages()" /></div>
+                <!-- images -->
+                <div id="img-small-div" class="img-div"></div>
+                <!-- zoom image -->
+                <div id="img-zoom-div" class="img-div"><p>Zoom Image</p><img id="img-zoom"></div>
+            </div>
 
-     </div>
+        </div>
     </div>
 
 </body>

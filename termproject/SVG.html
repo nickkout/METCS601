@@ -27,71 +27,80 @@
         defer></script>
 
 
-<body onload="CreateMenu()">
+<body>
+
+ <script>
+
+  //populate w item data
+  window.onload=(event) => {
+   CreateMenu();
+  };
+
+ </script>
 
     <noscript>You need to enable JavaScript to run this app.</noscript>
 
     <div id="outer-main-grid">
 
         <div id="nav-div">
-         <div id="menu"></div>
+            <div id="menu"></div>
         </div>
 
         <div id="main-div">
 
-         <div id="svg-div">
+            <div id="svg-div">
 
-          <div id="svg-title">Examples of SVG</div>
-          
-          <!-- SVG Circle -->  
-          <div id="svg-circle-div">
-           <p>A Circle</p>
+                <div id="svg-title">Examples of SVG</div>
 
-           <svg width="700" height="300" xmlns="http://www.w3.org/2000/svg"> 
-            <circle r="30" cx="350" cy="120" fill="yellow" id="cir" />
-             Your browser does not support inline SVG.
-           </svg>
+                <!-- SVG Circle -->
+                <div id="svg-circle-div">
+                    <p>A Circle</p>
 
-           <label>Choose a color:</label>
-           <select id="circlecolor">
-            <option disabled selected>--Select--</option>
-            <option value="red">Red</option>
-            <option value="green">Green</option>
-            <option value="orange">Orange</option>
-            <option value="blue">Blue</option>
-           </select>
+                    <svg width="700" height="300" xmlns="http://www.w3.org/2000/svg">
+                        <circle r="30" cx="350" cy="120" fill="yellow" id="cir" />
+                        Your browser does not support inline SVG.
+                    </svg>
 
-           <label>Enter radius:</label>
-           <input style="width:50px;" type="text" id="circle-radius" />
+                    <label>Choose a color:</label>
+                    <select id="circlecolor">
+                        <option disabled selected>--Select--</option>
+                        <option value="red">Red</option>
+                        <option value="green">Green</option>
+                        <option value="orange">Orange</option>
+                        <option value="blue">Blue</option>
+                    </select>
 
-           <input type="button" value="Redraw" onclick="redrawCircle()" /> 
-           
-           <p id="txt-cir-error"></p>
-          </div>
+                    <label>Enter radius:</label>
+                    <input style="width:50px;" type="text" id="circle-radius" />
 
-          <!-- SVG Rectangle -->  
-          <div id="svg-rect-div">
-           <p>A Rectangle</p>
+                    <input type="button" value="Redraw" onclick="redrawCircle()" />
 
-           <svg width="700" height="300" xmlns="http://www.w3.org/2000/svg">
-             <rect width="75" height="75" x="40" y="10" rx="20" ry="20" fill="navy" id="box" />
-           </svg>
+                    <p id="txt-cir-error"></p>
+                </div>
 
-           <label>Choose a state to change:</label>
-           <select id="rectstate">
-            <option disabled selected>--Select--</option>
-            <option value="Color">Color</option>
-            <option value="Width">Width</option>
-           </select>
+                <!-- SVG Rectangle -->
+                <div id="svg-rect-div">
+                    <p>A Rectangle</p>
 
-           <input type="button" value="Restart" onclick="restartRect()" /> 
-           
-           <p id="txt-rect-error"></p>
-          </div>
-         </div>
-       
+                    <svg width="700" height="300" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="75" height="75" x="40" y="10" rx="20" ry="20" fill="navy" id="box" />
+                    </svg>
 
-    </div>
+                    <label>Choose a state to change:</label>
+                    <select id="rectstate">
+                        <option disabled selected>--Select--</option>
+                        <option value="Color">Color</option>
+                        <option value="Width">Width</option>
+                    </select>
+
+                    <input type="button" value="Restart" onclick="restartRect()" />
+
+                    <p id="txt-rect-error"></p>
+                </div>
+            </div>
+
+
+        </div>
     </div>
 
 </body>
