@@ -24,7 +24,7 @@ function getJSON(category) {
   const url=`http://localhost:3000/${category}`
 
   //set variables
-	let ulItems=document.getElementById(category);
+  let ulItems=document.getElementById(category);
 
   //clear previous items 
   listItems=document.querySelectorAll("#"+category+" > li");
@@ -40,8 +40,6 @@ function getJSON(category) {
 	const o=n.substring(1,n.length);
 	const p=o.substring(0,o.length-1);
 	const ar=p.split('},');
-
-	   //alert(ar);
 
 	//create <li> items    
 	for(i=0;i<ar.length;i++) {
@@ -78,7 +76,8 @@ function allowDrop(ev) {
 function drop(ev) {
  ev.preventDefault();
  let data = ev.dataTransfer.getData("text");
- ev.target.appendChild(document.getElementById(data));
+	ev.target.appendChild(document.getElementById(data));
+	alert(data);
 }
 
 

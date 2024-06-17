@@ -2,9 +2,8 @@
 
 //creates nav menu
 function CreateMenu() {
-	/*
-	alert("fu");
-    const mnu = document.getElementById("menu");
+
+	const mnu=document.getElementById("menu");
     const ul = document.createElement("div"); //ul
     const pages = 6;
 
@@ -15,7 +14,7 @@ function CreateMenu() {
     ul.className = "menu-bar";
 
     for (let i = 1; i <= pages; i++) {
-        let li = document.createElement("div"); //li
+        let li = document.createElement("div");
         let a = document.createElement("a");
 
         ul.appendChild(li);
@@ -39,7 +38,7 @@ function CreateMenu() {
                 txt = "Geolocation";
                 break;
 			case 6:
-				txt="DragNDrop";
+				txt="DragNDrop"; 
 				break;
 			default:
 				txt= "";
@@ -53,9 +52,8 @@ function CreateMenu() {
         else {
          a.href = txt + ".html";
         }
-
     }
-*/
+
 };
 
 
