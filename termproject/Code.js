@@ -37,8 +37,11 @@ function CreateMenu() {
             case 4:
                 txt = "Geolocation";
                 break;
-            default:
-				txt= "DragnDrop";
+			case 5:
+				txt="DragNDrop";
+				break;
+			default:
+				txt= "";
         }
 
         a.text = txt;
