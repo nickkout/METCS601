@@ -2,35 +2,29 @@
 <!DOCTYPE html>
 <html lang="en">
 
- <head>
-    <meta charset="utf-8" />
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <title>Drag and Drop Page</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- sources -->
+    <script src="Code.js"></script>
+    <script src="DragNDrop.js"></script>
 
-    <meta name="theme-color" content="#000000">
-    <meta name="description" content="Drag and Drop webpage">
+    <link rel="stylesheet" href="Styles.css">
 
-    <title>Drag and Drop</title>
- </head>
+    <script>
 
- <!-- sources -->
- <script type="text/javascript" src="Code.js"></script>
- <script type="text/javascript" src="DragNDrop.js"></script>
-
- <link rel="stylesheet" href="Styles.css">
+        //populate w item data
+        window.onload=(event) => {
+            PopulateItems();
+            CreateMenu();
+        };
+    </script>
+</head>
 
  <body>
-
-  <script>
-     
-   //populate w item data 
-   window.onload=(event) => {
-    PopulateItems();
-    CreateMenu();
-   };
-  </script>
 
   <noscript>You need to enable JavaScript to run this app.</noscript>
 

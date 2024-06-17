@@ -4,33 +4,28 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- <link rel="icon" href="%PUBLIC_URL%/favicon.ico" /> -->
+    <title>Image Gallery Page</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- sources -->
+    <script src="Code.js"></script>
+    <script src="Gallery.js"></script>
 
-    <meta name="theme-color" content="#000000">
-    <meta name="description" content="Gallery">
+    <link rel="stylesheet" href="Styles.css">
 
-    <title>Image Gallery</title>
+    <script>
+
+        //populate w item data
+        window.onload=(event) => {
+            CreateMenu();
+        };
+
+    </script>
 </head>
 
-<script type="text/javascript" src="Code.js"></script>
-<script type="text/javascript" src="Gallery.js"></script>
-
-<link rel="stylesheet" href="Styles.css">
-
 <body>
-
- <script>
-
- //populate w item data
- window.onload=(event) => {
-  CreateMenu();
- };
-
- </script>
 
  <noscript>You need to enable JavaScript to run this app.</noscript>
 
@@ -43,11 +38,11 @@
         <div id="main-div">
             <div id="gallery-div">
                 <!-- button -->
-                <div id="bttn-div"><input type="button" value="Load Gallery" onclick="displayImages()" /></div>
+                <div id="bttn-div"><input type="button" value="Load Gallery" onclick="displayImages()"></div>
                 <!-- images -->
                 <div id="img-small-div" class="img-div"></div>
                 <!-- zoom image -->
-                <div id="img-zoom-div" class="img-div"><p>Zoom Image</p><img id="img-zoom"></div>
+                <div id="img-zoom-div" class="img-div"><p>Zoom Image</p><img id="img-zoom" alt="zoom image"></div>
             </div>
 
         </div>
