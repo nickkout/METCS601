@@ -1,9 +1,8 @@
 ﻿
 <!DOCTYPE html>
-
 <html lang="en">
 
-<head>
+ <head>
     <meta charset="utf-8" />
 
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
@@ -11,53 +10,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <meta name="theme-color" content="#000000">
-    <meta name="description" content="Drag and Drop">
+    <meta name="description" content="Drag and Drop webpage">
 
     <title>Drag and Drop</title>
-</head>
+ </head>
 
-<!-- sources -->
-<script type="text/javascript" src="Code.js"></script>
-<script type="text/javascript" src="DragNDrop.js"></script>
+ <!-- sources -->
+ <script type="text/javascript" src="Code.js"></script>
+ <script type="text/javascript" src="DragNDrop.js"></script>
 
-<link rel="stylesheet" href="Styles.css">
+ <link rel="stylesheet" href="Styles.css">
 
-<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGtwbih7QNTXsnBdMzI9QSeGh8ZLrXUeE&callback=initMap&v=weekly&solution_channel=GMP_CCS_geolocation_v1"
-        defer></script>
+ <body onload="CreateMenu()">
 
-<body onload="CreateMenu()">
+  <script>
 
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+   //populate w item data 
+   window.onload=(event) => {
+    PopulateItems()
+   };
 
-    <div id="outer-main-grid">
+  </script>
 
-        <div id="nav-div">
-            <div id="menu"></div>
-        </div>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
 
-        <div id="main-div">
+  <div id="outer-main-grid">
 
-            <div id="dd-div">
-                <div id="dd-title">Example of Drag and Drop</div>
+   <div id="nav-div">
+    <div id="menu"></div>
+   </div>
 
-                <div id="appetizers-div"><span>Appetizers</span><ul class="dd-selection" id="appetizers"></ul></div>
-                <div id="entrees-div"><span>Entrees</span><ul class="dd-selection" id="entrees"></ul></div>
-                <div id="dessert-div"><span>Dessert</span><ul class="dd-selection" id="dessert"></ul></div>
+   <div id="main-div">
 
-                <div id="dinner-div"><span>Selected Dinner</span>
-                 <ul id="dinner" class="dd-selection" style="height:200px;width:600px;padding:10px 5px;"
-                  ondrop="drop(event)" ondragover="allowDrop(event)">    
-                 </ul>
-                </div>
-            </div>
-        </div>
+    <div id="dd-div">
+      <div id="dd-title">
+       <h2>Example of Drag and Drop</h2>
+       <h3>Prix Fixe Menu</h3>
+       <h4>Select 1 item from each category</h4>
+      </div>
 
+      <div id="appetizers-div"><span>Appetizers</span><ul class="dd-selection" id="appetizers"></ul></div>
+      <div id="entrees-div"><span>Entrees</span><ul class="dd-selection" id="entrees"></ul></div>
+      <div id="dessert-div"><span>Dessert</span><ul class="dd-selection" id="dessert"></ul></div>
+
+      <div id="dinner-div">
+       <span>Selected Dinner</span>
+       <ul id="dinner" class="dd-selection" style="height:200px;width:600px;padding:10px 5px;"
+        ondrop="drop(event)" ondragover="allowDrop(event)">
+       </ul>
+     </div>
     </div>
+   </div>
 
-    <script>
-        PopulateItems();
-    </script>
+  </div>
 
-</body>
+ </body>
+
 </html>
