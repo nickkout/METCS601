@@ -54,6 +54,17 @@ function CreateFooter() {
         var link = document.createElement("a");
         d.appendChild(link);
         link.text = e;
-        link.href = "";
+        var url = "";
+        switch (e) {
+            case "Home":
+                url = "index";
+                break;
+            case "Contact":
+                url = "ContactForm";
+                break;
+            default:
+                url = e;
+        }
+        link.href = "".concat(url, ".html");
     });
 }
