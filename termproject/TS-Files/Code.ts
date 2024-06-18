@@ -31,7 +31,7 @@ function CreateMenu() {
                 break;
             case 6:
                 txt = "DragNDrop";
-                break;
+				break;
             default:
                 txt = "";
         }
@@ -43,26 +43,32 @@ function CreateMenu() {
             a.href = txt + ".html";
         }
     }
-};
-
-function CreateFooter() {
- let footer = document.getElementById("footer-div");
-
- const links = ["Home","AboutUs","Contact"];
-
- links.forEach(e => {
-  let d = document.createElement("div");
-  footer.appendChild(d);
-
-  let link = document.createElement("a");
-
-  d.appendChild(link);
-  link.text = e;
-  link.href = "";
- });
-
 }
+;
+function CreateFooter() {
+    var footer = document.getElementById("footer-div");
+	var links=["Home","AboutUs","Contact"];
 
+    links.forEach(function (e) {
+        var d = document.createElement("div");
+        footer.appendChild(d);
+        var link = document.createElement("a");
+        d.appendChild(link);
+		link.text=e;
 
+		let url="";
 
+		switch(e) {
+		 case "Home":
+		  url="index";
+          break;
+		 case "Contact":
+		  url="ContactForm";
+          break;
+         default:
+          url=e;
+		}
 
+        link.href = `${url}.html`;
+    });
+}
